@@ -1,0 +1,13 @@
+[Unit]
+Description=Monitor voltage
+After=network.target
+Wants=network-online.target
+
+[Service]
+Restart=always
+Type=simple
+ExecStart=/opt/voltage-monitor/voltage-monitor.py
+Environment=
+
+[Install]
+WantedBy=multi-user.target
